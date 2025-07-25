@@ -7,6 +7,7 @@ import Reuse.BaseClass;
 
 public class LoginTNG extends BaseClass {
 	@Test
+	
 	public void Successful_Login_TNG() {
 		LoginPage lp = new LoginPage(Driver);
 		lp.Txt_Username("practice");
