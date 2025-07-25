@@ -20,7 +20,7 @@ public class BaseClass {
 		op.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
 		Driver= new ChromeDriver(op);
 		Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		Driver.get("https://practice.expandtesting.com/login");
+		Driver.get("https://practice.expandtesting.com/");
 	}
 	
 	@AfterClass

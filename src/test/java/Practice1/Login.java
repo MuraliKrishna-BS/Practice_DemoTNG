@@ -1,8 +1,12 @@
 package Practice1;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,6 +16,18 @@ public class Login extends BaseClass{
 	//ChromeDriver Driver;
 	@Test
 	public void Successful_Login() {
+		
+		Actions act = new Actions(Driver);
+		WebDriverWait wait = new WebDriverWait(Driver, Duration.ofSeconds(10));
+		
+		
+		WebElement ClickLogin=Driver.findElement(By.xpath("(//a[@href='/login'])[2]"));	
+		act.scrollToElement(ClickLogin).build().perform();
+		act.scrollByAmount(0, 200).build().perform();
+		ClickLogin.click();
+		
+		wait.until(ExpectedConditions.titleIs("Test Login Page for Automation Testing Practice"));
+		
 		
 		String Actual = Driver.getTitle() ;
 		String Expected ="Test Login Page for Automation Testing Practice";
